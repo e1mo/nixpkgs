@@ -46,7 +46,7 @@ let
           hostPkgs.makeWrapper
         ] ++ lib.optionals (!config.skipTypeCheck) [ hostPkgs.mypy ];
         buildInputs = [ testDriver ];
-        testScript = config.testScriptString;
+        testScript = config._testScriptFile;
         preferLocalBuild = true;
         passthru = config.passthru;
         meta = config.meta // {
@@ -63,7 +63,7 @@ let
           cat "${../test-script-prepend.py}" >> testScriptWithTypes
           echo "${builtins.toString machineNames}" >> testScriptWithTypes
           echo "${builtins.toString vlanNames}" >> testScriptWithTypes
-          echo -n "$testScript" >> testScriptWithTypes
+          cat "$testScript" >> testScriptWithTypes
 
           echo "Running type check (enable/disable: config.skipTypeCheck)"
           echo "See https://nixos.org/manual/nixos/stable/#test-opt-skipTypeCheck"
@@ -74,7 +74,7 @@ let
                 testScriptWithTypes
         ''}
 
-        echo -n "$testScript" >> $out/test-script
+        cat "$testScript" >> $out/test-script
 
         ln -s ${testDriver}/bin/nixos-test-driver $out/bin/nixos-test-driver
 
