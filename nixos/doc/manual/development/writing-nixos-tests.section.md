@@ -24,10 +24,10 @@ A NixOS test is a module that has the following structure:
 We refer to the whole test above as a test module, whereas the values
 in [`nodes.<name>`](#test-opt-nodes) are NixOS modules themselves.
 
-The option [`testScript`](#test-opt-testScript) is a piece of Python code that executes the
-test (described below). During the test, it will start one or more
-virtual machines, the configuration of which is described by
-the option [`nodes`](#test-opt-nodes).
+The options [`testScript`](#test-opt-testScript) and [`testScriptFile`](#test-opt-testScriptFile)
+are pieces of Python code that executes the test (described below).
+During the test, it will start one or more virtual machines,
+the configuration of which is described by the option [`nodes`](#test-opt-nodes).
 
 An example of a single-node test is
 [`login.nix`](https://github.com/NixOS/nixpkgs/blob/master/nixos/tests/login.nix).

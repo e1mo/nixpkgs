@@ -1100,6 +1100,9 @@
   "module-services-mailman-other-mtas": [
     "index.html#module-services-mailman-other-mtas"
   ],
+  "test-opt-testScriptFile": [
+    "index.html#test-opt-testScriptFile"
+  ],
   "trezor": [
     "index.html#trezor"
   ],
