@@ -1533,6 +1533,7 @@ in
   signal-desktop = runTest ./signal-desktop.nix;
   silverbullet = runTest ./silverbullet.nix;
   simple-container = runTest ./simple-container.nix;
+  container-root-profile = runTest ./container-root-profile.nix;
   simple-vm = runTest ./simple-vm.nix;
   sing-box = runTest ./sing-box.nix;
   sks = runTest ./sks.nix;
